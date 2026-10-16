@@ -26,5 +26,40 @@
     "loading": "Consultando el clima...",
     "temperature": "Temperatura actual",
     "error": "No se pudo cargar el clima. Inténtalo de nuevo."
+  },
+  "camp-summary": {
+    "empty": "Vacío",
+    "participants": "{{count}} participantes",
+    "total-participants": "Total de participantes",
+    "available-capacity": "Capacidad disponible",
+    "loading": "Cargando campamentos de aventura...",
+    "error": "No se pudieron cargar los campamentos de aventura.",
+    "retry": "Intentar de nuevo"
+  },
+  "activity": {
+    "hiking": "Senderismo",
+    "trekking": "Trekking",
+    "camping": "Camping",
+    "climbing": "Escalada"
+  },
+  "new-reservation": {
+    "title": "Nueva reserva",
+    "subtitle": "Registra participantes en tu campamento de aventura",
+    "activity-type": "Tipo de actividad",
+    "participant-name": "Nombre del participante",
+    "participants": "Participantes",
+    "available-capacity": "Capacidad disponible: {{count}}",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "saving": "Guardando...",
+    "errors": {
+      "activity-required": "Selecciona una actividad.",
+      "name-required": "El nombre del participante es obligatorio.",
+      "participants-required": "Ingresa el número de participantes.",
+      "participants-min": "Ingresa un número entero mayor o igual a 1.",
+      "participants-capacity": "Solo hay {{available}} cupos disponibles.",
+      "capacity": "El campamento solo tiene {{available}} cupos. Revisa el número de participantes.",
+      "save": "No se pudo guardar la reserva. Inténtalo de nuevo."
+    }
   }
 }

@@ -3,6 +3,8 @@ import { Home } from './shared/presentation/views/home/home';
 
 const pageNotFound = () =>
   import('./shared/presentation/views/page-not-found/page-not-found').then((m) => m.PageNotFound);
+const adventureCampsRoutes = () =>
+  import('./adventure-camps/presentation/adventure-camps.routes').then((m) => m.adventureCampsRoutes);
 const baseTitle = 'TrailQuest Adventure Camps';
 
 /**
@@ -13,6 +15,7 @@ const baseTitle = 'TrailQuest Adventure Camps';
  */
 export const routes: Routes = [
   { path: 'home', component: Home, title: `${baseTitle} - Home` },
+  { path: 'adventure-camps', loadChildren: adventureCampsRoutes },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', loadComponent: pageNotFound, title: `${baseTitle} - Page Not Found` }
 ];
