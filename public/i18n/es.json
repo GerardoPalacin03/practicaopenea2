@@ -1,0 +1,25 @@
+{
+  "toolbar": {
+    "title": "Plataforma de gestión de campamentos de aventura TrailQuest",
+    "open-menu": "Abrir menú de navegación",
+    "logo-alt": "Logo de TrailQuest Adventure Camps",
+    "language": "Idioma preferido"
+  },
+  "sidenav": {
+    "navigation": "Navegación principal"
+  },
+  "option": {
+    "home": "Inicio",
+    "new-reservation": "Nueva reserva"
+  },
+  "home": {
+    "title": "Inicio",
+    "content": "Reservas inteligentes y gestión de capacidad para campamentos de aventura.",
+    "my-adventure-camps": "Mis campamentos de aventura"
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "No se encontró la ruta {{invalid_path}}.",
+    "go-home": "Volver a Inicio"
+  }
+}

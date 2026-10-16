@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="TrailQuest Adventure Camps">
+  <circle cx="40" cy="40" r="38" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3"/>
+  <circle cx="54" cy="26" r="7" fill="#f9a825"/>
+  <path d="M10 58 28 28l10 16 8-11 24 25z" fill="#2e7d32"/>
+  <path d="M28 28l5 8-5-2-4 4z" fill="#ffffff"/>
+  <path d="M30 58 40 44l10 14z" fill="#e65100"/>
+  <path d="M40 44v14" stroke="#ffffff" stroke-width="2"/>
+</svg>
