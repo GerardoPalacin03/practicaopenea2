@@ -1,0 +1,25 @@
+{
+  "toolbar": {
+    "title": "TrailQuest Adventure Camp Management Platform",
+    "open-menu": "Open navigation menu",
+    "logo-alt": "TrailQuest Adventure Camps logo",
+    "language": "Preferred language"
+  },
+  "sidenav": {
+    "navigation": "Main navigation"
+  },
+  "option": {
+    "home": "Home",
+    "new-reservation": "New Reservation"
+  },
+  "home": {
+    "title": "Home",
+    "content": "Smart Reservations and Capacity Management for Adventure Camps.",
+    "my-adventure-camps": "My Adventure Camps"
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "content": "The route {{invalid_path}} was not found.",
+    "go-home": "Back to Home"
+  }
+}

@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+.toolbar {
+  gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.toolbar-logo {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.toolbar-title {
+  font-family: var(--mat-sys-headline-small-font), serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.shell {
+  flex: 1 1 auto;
+}
+
+.sidenav {
+  width: 240px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 1.5rem 1rem;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .toolbar-title {
+    font-size: 0.9rem;
+  }
+}
