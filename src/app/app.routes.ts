@@ -15,7 +15,7 @@ const baseTitle = 'TrailQuest Adventure Camps';
  */
 export const routes: Routes = [
   { path: 'home', component: Home, title: `${baseTitle} - Home` },
-  { path: 'adventure-camps', loadChildren: adventureCampsRoutes },
+  { path: 'reservations', loadChildren: adventureCampsRoutes },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', loadComponent: pageNotFound, title: `${baseTitle} - Page Not Found` }
 ];
