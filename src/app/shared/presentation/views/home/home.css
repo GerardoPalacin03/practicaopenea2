@@ -1,0 +1,9 @@
+.home {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+  font-family: var(--mat-sys-headline-large-font), serif;
+  margin: 0 0 0.75rem;
+}
