@@ -1,0 +1,12 @@
+<div class="weather-temperature" role="status" aria-live="polite">
+  @if (store.loading()) {
+    <mat-icon aria-hidden="true">hourglass_empty</mat-icon>
+    <span>{{ 'weather.loading' | translate }}</span>
+  } @else if (store.error()) {
+    <mat-icon class="weather-error" aria-hidden="true">cloud_off</mat-icon>
+    <span class="weather-error">{{ 'weather.error' | translate }}</span>
+  } @else if (store.temperature() !== null) {
+    <mat-icon aria-hidden="true">thermostat</mat-icon>
+    <span>{{ 'weather.temperature' | translate }}: <strong>{{ store.temperature() }} °C</strong></span>
+  }
+</div>
