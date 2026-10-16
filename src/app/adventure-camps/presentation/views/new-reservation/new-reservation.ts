@@ -1,5 +1,5 @@
 import { Component, DestroyRef, Signal, computed, effect, inject, signal } from '@angular/core';
-import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -48,7 +48,18 @@ export class NewReservation {
   /** Translation key (and parameters) of the error shown when saving fails. */
   protected readonly submitError = signal<{ key: string; params?: object } | null>(null);
 
-  /** Reactive form of the reservation. */
+  /** Activity currently selected. */
+  protected readonly selectedActivity = signal<ActivityType | null>(null);
+  /** Activities offered by the loaded camps. */
+  protected readonly activityTypes = computed(() => this.store.camps().map((camp) => camp.activityType));
+  /** Summary of the camp of the selected activity. */
+  protected readonly selectedSummary = computed(
+    () => this.store.summaries().find((summary) => summary.camp.activityType === this.selectedActivity()) ?? null
+  );
+  /** Available capacity of the selected camp, or null when no activity is selected. */
+  protected readonly availableCapacity: Signal<number | null> = computed(() => this.selectedSummary()?.availableCapacity ?? null);
+
+  /** Reactive form of the reservation; it is declared after the signals because the capacity validator reads them. */
   protected readonly form = this.formBuilder.group({
     activityType: this.formBuilder.control<ActivityType | null>(null, Validators.required),
     participantName: this.formBuilder.control('', [Validators.required, notBlank]),
@@ -60,23 +71,15 @@ export class NewReservation {
     ])
   });
 
-  /** Activity currently selected. */
-  protected readonly selectedActivity = toSignal(this.form.controls.activityType.valueChanges, { initialValue: null });
-  /** Activities offered by the loaded camps. */
-  protected readonly activityTypes = computed(() => this.store.camps().map((camp) => camp.activityType));
-  /** Summary of the camp of the selected activity. */
-  protected readonly selectedSummary = computed(
-    () => this.store.summaries().find((summary) => summary.camp.activityType === this.selectedActivity()) ?? null
-  );
-  /** Available capacity of the selected camp, or null when no activity is selected. */
-  protected readonly availableCapacity: Signal<number | null> = computed(() => this.selectedSummary()?.availableCapacity ?? null);
-
   constructor() {
     this.weatherStore.reset();
     this.store.loadAll();
     this.form.controls.activityType.valueChanges
       .pipe(takeUntilDestroyed())
-      .subscribe((activityType) => this.loadWeatherOf(activityType));
+      .subscribe((activityType) => {
+        this.selectedActivity.set(activityType);
+        this.loadWeatherOf(activityType);
+      });
     // The capacity rule depends on the selected camp, so it is checked again whenever the capacity changes.
     effect(() => {
       this.availableCapacity();
