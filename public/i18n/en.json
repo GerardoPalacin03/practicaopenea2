@@ -21,5 +21,10 @@
     "title": "Page not found",
     "content": "The route {{invalid_path}} was not found.",
     "go-home": "Back to Home"
+  },
+  "weather": {
+    "loading": "Checking the weather...",
+    "temperature": "Current temperature",
+    "error": "The weather could not be loaded. Please try again."
   }
 }
