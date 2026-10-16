@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AdventureCampSummaryList } from '../../../../adventure-camps/presentation/components/adventure-camp-summary-list/adventure-camp-summary-list';
 
 /**
  * Home view.
@@ -9,7 +10,7 @@ import { TranslatePipe } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-home',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, AdventureCampSummaryList],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })

@@ -1,0 +1,17 @@
+@if (store.error()) {
+  <p class="message" role="alert">{{ 'camp-summary.error' | translate }}</p>
+  <button mat-stroked-button type="button" (click)="store.loadAll()">{{ 'camp-summary.retry' | translate }}</button>
+} @else if (store.loading() && store.summaries().length === 0) {
+  <div role="status" aria-live="polite">
+    <p class="message">{{ 'camp-summary.loading' | translate }}</p>
+    <mat-progress-bar mode="indeterminate" />
+  </div>
+} @else {
+  <mat-grid-list [cols]="columns()" rowHeight="300px" gutterSize="16px">
+    @for (summary of store.summaries(); track summary.camp.id) {
+      <mat-grid-tile>
+        <app-adventure-camp-summary-card [summary]="summary" />
+      </mat-grid-tile>
+    }
+  </mat-grid-list>
+}

@@ -26,5 +26,40 @@
     "loading": "Checking the weather...",
     "temperature": "Current temperature",
     "error": "The weather could not be loaded. Please try again."
+  },
+  "camp-summary": {
+    "empty": "Empty",
+    "participants": "{{count}} participants",
+    "total-participants": "Total Participants",
+    "available-capacity": "Available Capacity",
+    "loading": "Loading adventure camps...",
+    "error": "The adventure camps could not be loaded.",
+    "retry": "Try again"
+  },
+  "activity": {
+    "hiking": "Hiking",
+    "trekking": "Trekking",
+    "camping": "Camping",
+    "climbing": "Climbing"
+  },
+  "new-reservation": {
+    "title": "New Reservation",
+    "subtitle": "Register Participants at Your Adventure Camp",
+    "activity-type": "Activity Type",
+    "participant-name": "Participant Name",
+    "participants": "Participants",
+    "available-capacity": "Available Capacity: {{count}}",
+    "create": "Create",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "errors": {
+      "activity-required": "Select an activity.",
+      "name-required": "The participant name is required.",
+      "participants-required": "Enter the number of participants.",
+      "participants-min": "Enter a whole number of at least 1.",
+      "participants-capacity": "Only {{available}} spots are available.",
+      "capacity": "The camp only has {{available}} spots left. Review the number of participants.",
+      "save": "The reservation could not be saved. Please try again."
+    }
   }
 }
